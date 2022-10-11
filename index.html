@@ -1,0 +1,59 @@
+<!-- create retrieve update delete -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="w-50 mx-auto py-5">
+        <h1 class="mb-5">Product mangement system</h1>
+        <div clacss="form-group ">
+            <label for="productName">productName :</label>
+            <input type="text" id="productName" class="form-control" onkeyup="validateProductName()">
+            <p class="text-danger d-none fw-bolder" id="name-validation">invalid product name hint (should start with capital)</p>
+        </div>
+        <div class="form-group mt-4 mb-4">
+            <label for="productPrice">productPrice :</label>
+            <input type="number" id="productPrice" class="form-control"  onkeyup="validateProductPrice()">
+            <p class="text-danger d-none fw-bolder" id="price-validation">invalid product price hint (should start from 1000 to 10000)</p>
+        </div>
+        <div class="form-group mb-4">
+            <label for="productCat">productCat :</label>
+            <input type="text" id="productCat" class="form-control" onkeyup="validateProductCat()">
+            <p class="text-danger d-none fw-bolder" id="cat-validation">invalid product category hint (should be TV or Mobile Or Device)</p>
+        </div>
+        <div class="form-group mb-4">
+            <label for="productDesc">productDesc :</label>
+            <input type="text" id="productDesc" class="form-control" onkeyup="validateProductDesc()">
+            <p class="text-danger d-none fw-bolder" id="Desc-validation">invalid product Description hint (shouldn't be more than 500 charater)</p>
+        </div>
+        <button class="btn btn-outline-info" id="mainBtn" onclick="addProduct()">Add product</button>
+    </div>
+    <div class="w-50 mx-auto mb-5">
+        <label for="">search</label>
+        <input type="text" oninput="search(this.value)"class="form-control">
+    </div>
+   <div class="w-50 mx-auto">
+    <table class="table text-center">
+        <thead>
+            <th>index</th>
+            <th>productName</th>
+            <th>productPrice</th>
+            <th>productCategory</th>
+            <th>productDesc</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tableData">
+           
+        </tbody>
+    </table>
+   </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
